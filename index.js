@@ -82,7 +82,7 @@ function searchCartForItemToRemove(itemName) {
 
 function removeItemFromCart(itemToRemove) {
   var indexOfItemToRemove = cart.indexOf(itemToRemove)
-  getCart.splice(indexOfItemToRemove,1)
+  getCart().splice(indexOfItemToRemove,1)
 }
 
 function notifyUserThereIsNoItemToRemove() {
