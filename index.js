@@ -30,7 +30,13 @@ function removeFromCart(itemName) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (arguments[0] == undefined) {
+    return "Sorry, we don't have a credit card on file for you."
+  } else {
+    var sumToCharge = total()
+    setCart([])
+    return `Your total cost is $${sumToCharge}, which will be charged to the card ${cardNumber}.`
+  }
 }
 
 // Helper Functions
@@ -78,3 +84,8 @@ function removeItemFromCart(itemToRemove) {
   var indexOfItemToRemove = cart.indexOf(itemToRemove)
   getCart.splice(indexOfItemToRemove,1)
 }
+
+function notifyUserThereIsNoItemToRemove() {
+  return 'That item is not in your cart.'
+}
+
